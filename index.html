@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Welcome To Your Generic Bank</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <form id="register">
+            <div class="form-group">
+              <h2>Register</h2>
+              <label for="name">Name: </label>
+              <input type="text" id="input-name">
+            </div>
+            <div class ="form-group">
+              <label for="name">Password: </label>
+              <input type="password" id="input-password">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+          <form id="log-in">
+            <div class="form-group">
+              <h2>Log In</h2>
+              <label for="name">Name: </label>
+              <input type="text" id="login-name">
+            </div>
+            <div class ="form-group">
+              <label for="name">Password: </label>
+              <input type="password" id="login-password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+          <div class="col-sm-8">
+            <form id="bank-form">
+              <div class="form-group">
+                <h2>Balance</h2>
+                <label for="name">Deposit Amount</label>
+                <input type="text" id="deposit">
+              </div>
+              <div class ="form-group">
+                <label for="name">Withdraw Amount</label>
+                <input type="text" id="withdrawal">
+              </div>
+              <button type="submit" class="btn btn-danger">Transfer</button>
+            </form>
+
+          </div>
+        </div>
+        <div class ="row" id="output">
+          <h2> Money </h2>
+
+          <ul id="display">
+            <p>Name: <span class="name"></span></p>
+            <p>Account Balance: <span class="money"></span></p>
+          </ul>
+        </div>
+    </div>
+
+  </body>
+</html>
