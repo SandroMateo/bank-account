@@ -1,3 +1,5 @@
+var i = 0;
+
 function Account(name,password) {
   this.name = name;
   this.password = password;
@@ -10,8 +12,8 @@ function Balance(deposit, withdrawal) {
   this.withdrawal = withdrawal
 }
 
-Balance.prototype.sum = function() {
-  this.balance = this.deposit - this.withdrawal;
+Balance.prototype.sum = function(total) {
+  this.balance = (this.deposit - this.withdrawal) + total;
 }
 var Profile = {};
 $(document).ready(function() {
@@ -30,6 +32,8 @@ $(document).ready(function() {
     if(password1 === Profile.password && name1 === Profile.name)
     {
       $("#bank-form").show();
+      $("form#log-in").slideUp(200);
+      $("form#register").slideDown();
     }
     else
     {
@@ -43,11 +47,27 @@ $(document).ready(function() {
     var deposit = parseFloat($("#deposit").val());
     var withdrawal = parseFloat($("#withdrawal").val());
     var newBalance = new Balance(deposit, withdrawal)
-    newBalance.sum();
 
     Profile.balances.push(newBalance);
+    if(i > 0)
+    {
+      newBalance.sum(Profile.balances[i-1].balance);
+    }
+    else {
+      newBalance.sum(0);
+    }
+    $("#name").text(Profile.name);
+    $("#money").text("Account: " + Profile.balances[i].balance);
+    $("#deposit").val(0);
+    $("#withdrawal").val(0);
+    $("#bank-form").fadeOut(1000);
 
-    $(".name").text(Profile.name);
-    $(".money").text(Profile.balances[0].balance);
+    $("#name").last().click(function() {
+      $("#money").toggle();
+    });
+    $("#money").last().click(function() {
+      $("#bank-form").show();
+    });
+    i += 1;
   });
 });

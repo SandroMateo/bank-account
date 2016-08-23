@@ -1,11 +1,39 @@
+#register {
+  background: lightgrey;
+}
+
 #log-in {
   display: none;
+  background: lightgrey;
 }
 
 #bank-form {
   display: none;
+  background: lightblue;
 }
 
 #output {
+  display: none;
+}
+
+#deposit {
+  float: right;
+}
+
+#withdrawal {
+  float: right;
+}
+
+#name:hover {
+  color: crimson;
+  cursor: pointer;
+}
+
+#money:hover {
+  color: crimson;
+  cursor: pointer;
+}
+
+#money {
   display: none;
 }

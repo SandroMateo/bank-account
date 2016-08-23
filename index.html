@@ -43,25 +43,25 @@
             <form id="bank-form">
               <div class="form-group">
                 <h2>Balance</h2>
-                <label for="name">Deposit Amount</label>
-                <input type="text" id="deposit">
+                <label for="name">Deposit Amount:
+                  <input type="text" class="form-control" id="deposit" value="0">
+                </label>
               </div>
               <div class ="form-group">
-                <label for="name">Withdraw Amount</label>
-                <input type="text" id="withdrawal">
+                <label for="name">Withdraw Amount:
+                  <input type="text" class="form-control" id="withdrawal" value="0">
+                </label>
               </div>
-              <button type="submit" class="btn btn-danger">Transfer</button>
+              <button id="transfer"type="submit" class="btn btn-danger">Transfer</button>
             </form>
 
           </div>
         </div>
         <div class ="row" id="output">
-          <h2> Money </h2>
+          <h2> Accounts </h2>
 
-          <ul id="display">
-            <p>Name: <span class="name"></span></p>
-            <p>Account Balance: <span class="money"></span></p>
-          </ul>
+          <p><span id="name"></span></p>
+          <p><span id="money"></span></p>
         </div>
     </div>
 
